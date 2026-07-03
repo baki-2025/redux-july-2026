@@ -66,4 +66,5 @@ store.subscribe(() => {
 store.dispatch(incrementCounter());
 store.dispatch(incrementCounter());
 store.dispatch(decrementCounter());
+store.dispatch(incrementCounter());
 
