@@ -9,7 +9,8 @@ const DECREMENT = 'DECREMENT';
 const RESET = 'RESET';
 
 const counterInitialState = {
-    count: 0
+    count: 0,
+    
 };
 
 const incrementCounterAction = () => {
@@ -31,4 +32,25 @@ const resetCounterAction = () => {
     };
 }
 
-
+//COUNTER REDUCER
+const counterReducer = (state=initialState, action) => {
+    switch(action.type){
+        case INCREMENT:
+            return {
+                ...state,
+                count: state.count + 1
+            };
+        case DECREMENT:
+            return {
+                ...state,
+                count: state.count - 1
+            };
+        case RESET:
+            return {
+                ...state,
+                count: 0
+            };
+        default:
+          state;
+    }
+};
