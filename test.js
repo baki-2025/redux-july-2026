@@ -82,3 +82,4 @@ store.dispatch(incrementCounterAction());
 store.dispatch(decrementCounterAction());
 store.dispatch(resetCounterAction());
 store.dispatch(incrementCounterByValue(5));
+store.dispatch(incrementCounterByValue(10));
