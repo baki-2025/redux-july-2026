@@ -18,6 +18,7 @@ const initialState = {
 const addUser = (user) => {
     return {
         type: ADD_USER,
+        payload: user
         
     };
 }
@@ -28,8 +29,8 @@ const userReducer = (state=initialState, action) => {
     switch(action.type){
         case ADD_USER:
             return {
-                ...state,
-                count: state.count + action.payload
+                users: [...state.users, action.payload],
+                count: state.count + 1
             };
         default:
          state;
@@ -44,3 +45,4 @@ store.subscribe(() => {
 });
 
 store.dispatch(addUser("Jane"));
+store.dispatch(addUser("Doe"));
