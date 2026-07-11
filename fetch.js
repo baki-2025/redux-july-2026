@@ -75,7 +75,9 @@ const fetchData = () => {
         axios
             .get(API_URL)
             .then((response) => {
-                dispatch(getTodosSuccess(response.data));
+            const todo = response.data;
+            const titles = todo.map((todo) => todo.title);
+            console.log(titles);
             })
             .catch((error) => {
                 dispatch(getTodosFailure(error.message));
