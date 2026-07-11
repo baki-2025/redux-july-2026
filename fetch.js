@@ -14,7 +14,7 @@ const thunk = require("redux-thunk").thunk;
 const GET_TODOS_REQUEST = "Get_TODOS_REQUEST";
 const GET_TODOS_SUCCESS = "Get_TODOS_SUCCESS";
 const GET_TODOS_FAILURE = "Get_TODOS_FAILURE";
-const API_URL = "https://jsonplaceholder.typicode.com/todos";
+const API_URL = "https://jsonplaceholder.typicode.com/todo";
 
 //states
 
@@ -77,10 +77,12 @@ const fetchData = () => {
             .then((response) => {
             const todo = response.data;
             const titles = todo.map((todo) => todo.title);
-            console.log(titles);
+            //console.log(titles);
+            dispatch(getTodosSuccess(titles));
             })
             .catch((error) => {
-                dispatch(getTodosFailure(error.message));
+                const errorMassage = (error.message);
+                dispatch(getTodosFailure(errorMassage));
             });
     };
 };
